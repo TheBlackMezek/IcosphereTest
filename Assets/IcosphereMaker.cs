@@ -7,6 +7,7 @@ public class IcosphereMaker : MonoBehaviour {
     public int recusionLevel = 1;
 
     public MeshFilter meshFilter;
+    public MeshCollider meshCollider;
 
     private Mesh icoMesh;
     List<Vector3> vertices;
@@ -145,6 +146,10 @@ public class IcosphereMaker : MonoBehaviour {
 
 
         meshFilter.mesh = icoMesh;
+        if(meshCollider)
+        {
+            meshCollider.sharedMesh = icoMesh;
+        }
     }
 
 
